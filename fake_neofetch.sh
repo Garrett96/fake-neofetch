@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Default system information (can be customized by user)
@@ -30,7 +31,7 @@ while [[ $# -gt 0 ]]; do
         --kernel) FAKE_KERNEL="$2"; shift 2 ;;
         --uptime) FAKE_UPTIME="$2"; shift 2 ;;
         --image) FAKE_IMAGE="$2"; shift 2 ;;
-        *) shift ;;
+        *) shift ;;  # Ignore unknown options
     esac
 done
 
@@ -43,47 +44,30 @@ RESET="\e[0m"
 show_ascii_image() {
     case "$FAKE_IMAGE" in
         "tux")
-            echo -e "${CYAN}        .--.        ${RESET}"
-            echo -e "${CYAN}       |o_o |       ${RESET}"
-            echo -e "${CYAN}       |:_/ |       ${RESET}"
-            echo -e "${CYAN}      //   \\ \\      ${RESET}"
-            echo -e "${CYAN}     (|     | )     ${RESET}"
-            echo -e "${CYAN}    /'\\_   _/`\\    ${RESET}"
-            echo -e "${CYAN}    \\___)=(___/    ${RESET}"
+            printf "${CYAN}        .--.        ${RESET}\n"
+            printf "${CYAN}       |o_o |       ${RESET}\n"
+            printf "${CYAN}       |:_/ |       ${RESET}\n"
+            printf "${CYAN}      //   \\\\      ${RESET}\n"
+            printf "${CYAN}     (|     | )     ${RESET}\n"
+            printf "${CYAN}    /'\\_   _/\`\\    ${RESET}\n"
+            printf "${CYAN}    \\___)=(___/    ${RESET}\n"
             ;;
         "arch")
-            echo -e "${CYAN}       /\\       ${RESET}"
-            echo -e "${CYAN}      /  \\      ${RESET}"
-            echo -e "${CYAN}     /\\   \\     ${RESET}"
-            echo -e "${CYAN}    /      \\    ${RESET}"
-            echo -e "${CYAN}   /   ,,   \\   ${RESET}"
-            echo -e "${CYAN}  /   |  |  -\\  ${RESET}"
+            printf "${CYAN}       /\\       ${RESET}\n"
+            printf "${CYAN}      /  \\      ${RESET}\n"
+            printf "${CYAN}     /\\   \\     ${RESET}\n"
+            printf "${CYAN}    /      \\    ${RESET}\n"
+            printf "${CYAN}   /   ,,   \\   ${RESET}\n"
+            printf "${CYAN}  /   |  |  -\\  ${RESET}\n"
             ;;
         *)
-            echo -e "${CYAN}       .-/+oossssoo+/-.       ${RESET}"
-            echo -e "${CYAN}    `:+ssssssssssssssssss+:`    ${RESET}"
-            echo -e "${CYAN}  -+ssssssssssssssssssyyssss+-  ${RESET}"
-            echo -e "${CYAN} .ossssssssssssssssssdMMMNysssso. ${RESET}"
-            echo -e "${CYAN}/ssssssssssshdmmNNmmyNMMMMhssssss/ ${RESET}"
+            printf "${CYAN}       .-/+oossssoo+/-.       ${RESET}\n"
+            printf "${CYAN}    :+ssssssssssssssssss+:    ${RESET}\n"
+            printf "${CYAN}  -+ssssssssssssssssssyyssss+-  ${RESET}\n"
+            printf "${CYAN} .ossssssssssssssssssdMMMNysssso. ${RESET}\n"
             ;;
     esac
 }
 
-# Display fake neofetch
-clear
+# Call the function to display the ASCII image
 show_ascii_image
-echo -e "${GREEN}OS:${RESET} $FAKE_OS"
-echo -e "${GREEN}Host:${RESET} $FAKE_HOSTNAME"
-echo -e "${GREEN}Kernel:${RESET} $FAKE_KERNEL"
-echo -e "${GREEN}Uptime:${RESET} $FAKE_UPTIME"
-echo -e "${GREEN}Packages:${RESET} $FAKE_PACKAGES"
-echo -e "${GREEN}Shell:${RESET} $FAKE_SHELL"
-echo -e "${GREEN}Resolution:${RESET} $FAKE_RESOLUTION"
-echo -e "${GREEN}DE:${RESET} $FAKE_DE"
-echo -e "${GREEN}WM:${RESET} $FAKE_WM"
-echo -e "${GREEN}Theme:${RESET} $FAKE_THEME"
-echo -e "${GREEN}Icons:${RESET} $FAKE_ICONS"
-echo -e "${GREEN}CPU:${RESET} $FAKE_CPU"
-echo -e "${GREEN}RAM:${RESET} $FAKE_RAM"
-echo -e "${GREEN}Disk:${RESET} $FAKE_DISK"
-echo -e "${GREEN}Virtualization:${RESET} $FAKE_VIRT"

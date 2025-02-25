@@ -21,45 +21,16 @@ FAKE_IMAGE="default"
 # Allow user to customize parameters via arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --cpu)
-            FAKE_CPU="$2"
-            shift 2
-            ;;
-        --ram)
-            FAKE_RAM="$2"
-            shift 2
-            ;;
-        --disk)
-            FAKE_DISK="$2"
-            shift 2
-            ;;
-        --virt)
-            FAKE_VIRT="$2"
-            shift 2
-            ;;
-        --hostname)
-            FAKE_HOSTNAME="$2"
-            shift 2
-            ;;
-        --os)
-            FAKE_OS="$2"
-            shift 2
-            ;;
-        --kernel)
-            FAKE_KERNEL="$2"
-            shift 2
-            ;;
-        --uptime)
-            FAKE_UPTIME="$2"
-            shift 2
-            ;;
-        --image)
-            FAKE_IMAGE="$2"
-            shift 2
-            ;;
-        *)
-            shift
-            ;;
+        --cpu) FAKE_CPU="$2"; shift 2 ;;
+        --ram) FAKE_RAM="$2"; shift 2 ;;
+        --disk) FAKE_DISK="$2"; shift 2 ;;
+        --virt) FAKE_VIRT="$2"; shift 2 ;;
+        --hostname) FAKE_HOSTNAME="$2"; shift 2 ;;
+        --os) FAKE_OS="$2"; shift 2 ;;
+        --kernel) FAKE_KERNEL="$2"; shift 2 ;;
+        --uptime) FAKE_UPTIME="$2"; shift 2 ;;
+        --image) FAKE_IMAGE="$2"; shift 2 ;;
+        *) shift ;;
     esac
 done
 
@@ -75,18 +46,18 @@ show_ascii_image() {
             echo -e "${CYAN}        .--.        ${RESET}"
             echo -e "${CYAN}       |o_o |       ${RESET}"
             echo -e "${CYAN}       |:_/ |       ${RESET}"
-            echo -e "${CYAN}      //   \ \      ${RESET}"
+            echo -e "${CYAN}      //   \\ \\      ${RESET}"
             echo -e "${CYAN}     (|     | )     ${RESET}"
-            echo -e "${CYAN}    /'\_   _/`\    ${RESET}"
-            echo -e "${CYAN}    \___)=(___/    ${RESET}"
+            echo -e "${CYAN}    /'\\_   _/`\\    ${RESET}"
+            echo -e "${CYAN}    \\___)=(___/    ${RESET}"
             ;;
         "arch")
-            echo -e "${CYAN}       /\       ${RESET}"
-            echo -e "${CYAN}      /  \      ${RESET}"
-            echo -e "${CYAN}     /\   \     ${RESET}"
-            echo -e "${CYAN}    /      \    ${RESET}"
-            echo -e "${CYAN}   /   ,,   \   ${RESET}"
-            echo -e "${CYAN}  /   |  |  -\  ${RESET}"
+            echo -e "${CYAN}       /\\       ${RESET}"
+            echo -e "${CYAN}      /  \\      ${RESET}"
+            echo -e "${CYAN}     /\\   \\     ${RESET}"
+            echo -e "${CYAN}    /      \\    ${RESET}"
+            echo -e "${CYAN}   /   ,,   \\   ${RESET}"
+            echo -e "${CYAN}  /   |  |  -\\  ${RESET}"
             ;;
         *)
             echo -e "${CYAN}       .-/+oossssoo+/-.       ${RESET}"

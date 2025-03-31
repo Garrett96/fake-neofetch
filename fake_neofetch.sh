@@ -17,8 +17,8 @@ FAKE_DE="KDE Plasma 5.27"
 FAKE_WM="KWin"
 FAKE_THEME="Nord Dark"
 FAKE_ICONS="Papirus-Dark"
-FAKE_IMAGE="default"
-FAKE_MEM="/ 15909MiB"
+FAKE_IMAGE="tux"
+FAKE_MEM="2025 MiB / 15909MiB"
 
 # Allow user to customize parameters via arguments
 while [[ $# -gt 0 ]]; do
